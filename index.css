@@ -1,0 +1,228 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+:root {
+    /* Escala de Cor Principal Azul */
+    --cor-white:        #E9F0FB;
+    --cor-principal-01: #82A1CD;
+    --cor-principal-02: #4F79B6;
+    --cor-principal:    #1c519f;
+    --cor-principal-03: #16417C;
+    --cor-principal-04: #102F5A;
+    --cor-principal-05: #0A1D38;
+    --cor-black:        #040B16;
+
+    /* Escala de cor primaria (Botões e detalhes) */
+    --cor-hover-01:     #F29453;
+    --cor-primaria:     #EE7522;
+    --cor-click-01:     #BA5C1A;
+
+    /* Escala de cor secundaria (Botões e detalhes) */
+    --cor-hover-02:     #F1AE53;
+    --cor-secundaria:   #ED9621;
+    --cor-click-02:     #B7741A;
+
+    /* Escala de Cinza */
+    --cor-cinza-01:     #AFB6C1;
+    --cor-cinza-02:     #767D88;
+    --cor-cinza-03:     #3D444F;
+
+}
+
+header {
+    background-color: var(--cor-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-right: 24px;
+    
+}
+
+header nav a {
+    color: var(--cor-white);
+    padding: 24px;
+}
+
+.botao_secundario {
+    padding: 16px;
+    background-color: transparent;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    color: var(--cor-white);
+    margin: 24px;
+}
+
+.botao_primario {
+    padding: 16px;
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    border-radius: 8px;
+    color: var(--cor-white);
+    margin: 24px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 96px;
+}
+
+.paragrafo {
+    position: relative;
+    top: 0;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 96px;
+}
+
+#Hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--cor-principal-03);
+    color: var(--cor-white);
+    height: 836px;
+    justify-content: space-between;
+}
+
+.Hero_foreground {
+    height: 494px;
+    width: 592px;
+    margin-left: 110px;
+    z-index: +10;
+}
+
+.img_hero {
+    margin-right: 110px;
+    z-index: +10;
+}
+
+.onda {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: +10;
+}
+
+.img_hero_background {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    z-index: +5;
+}
+
+#sobre {
+    background-color: var(--cor-principal-02);
+    height: 797px;
+    position: relative;
+    z-index: +10;
+}
+
+.sobre_img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    opacity: 0.30;
+}
+
+.faixa_sobre {
+    background-color: var(--cor-principal);
+    opacity: 0.75;
+    height: 435px;
+    position: relative;
+    top: 20%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+
+}
+
+.sobre {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 42px;
+}
+
+.title_sobre{
+    padding-left: 60px;
+    font-size: 56px;
+    color: var(--cor-white);
+    grid-column: 1 / -1;
+}
+
+.card_sobre {
+    background-color: var(--cor-white);
+    width: 442px;
+    height: 212px;
+    border-radius: 8px;
+    transform: translateY(172px);
+    text-align: center;
+    padding: 64px;
+    display: flex;
+}
+
+#serviços {
+    height: 950px;
+    background-color: var(--cor-principal-01);
+    background-image: url(img/img\ serviços.png);
+
+}
+
+.title_serviços {
+    display: flex;
+    height: 226px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-black);
+}
+
+.area_serviços {
+    display: grid;
+    grid-template-columns: 303px 303px 303px;
+    grid-template-rows: 327px 327px;
+    justify-content: center;
+    row-gap: 22px;
+    column-gap: 56px;
+    color: var(--cor-white);
+}
+
+.cards_serviços {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--cor-black);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+}
+
+
+.cards_serviços > img {
+    position: absolute;
+    z-index: -10;
+}
+
+.cards_serviços h3 + p {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    padding: 12px;
+}
+
+
