@@ -1,12 +1,24 @@
 #Hero {
+    position: relative;
     height: 91vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 196px;
+    column-gap: 7vw;
     background-color: var(--cor-principal-03);
-    padding: 113px;
+    padding: 5vw;
     color: var(--cor-white);
     align-items: center;
+}
+.botao_secundario {
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
+}
+
+.botao_primario {
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
 }
 
 .Hero_Background {
@@ -15,29 +27,35 @@
 }
 
 .area_img_hero {
-    max-width: 100%;  
-    max-height: 100%; 
-    width: 594px; 
+    max-width: 595px;  
+    max-height: 495px; 
     object-fit: cover; 
 }
 
 h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 98px;
-    text-shadow: 2px 8px 4px var(--cor-black);
+    font-size: 6vw;
 }
 
 #instalacoes {
+    position: relative;
     height: 100vh;
     background-color: var(--cor-black);
     color: var(--cor-white);
     padding: 72px;
     padding-top: 0;
     padding-top: 48px;
+
+}
+
+.instalacoes_background{
+    background-image: url(img/instalações.png);
+    background-size: cover;
 }
 
 #instalacoes_area {
+    position: relative;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4,auto);
@@ -50,7 +68,7 @@ h1 {
 }
 
 .title_instalacoes {
-    font-size: 56px;
+    font-size: 3vw;
     color: var(--cor-white);
     grid-column: 1 / -1;
     text-align: center;
@@ -58,10 +76,14 @@ h1 {
 }
 
 .cards_instalacoes {
+    position: relative;
+    background-color: var(--cor-black);
     padding-top: 48px;
     text-align: center;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
+    min-height: 164px;
+    min-width: 151px;
     max-width: 303px;
     max-height: 327px;
     border-radius: 24px;
@@ -71,10 +93,49 @@ h1 {
 }
 
 .cards_instalacoes > .botao_secundario {
-    margin: 0;
+    margin: 0px;
 }
 
 p {
     overflow: hidden;
-    text-overflow: clip; 
- }
+    text-overflow: ellipsis;
+}
+
+.texto {
+    text-align: left;
+    padding: 32px;
+}
+
+.texto> h3 {
+    font-size: 36px;
+}
+
+.texto > * {
+    margin-bottom: 35px;
+    max-height: 240px;
+    max-width: 590px;
+
+}
+
+.texto > .botao_secundario, .botao_primario {
+    margin: 0;
+    text-align: left;
+    margin-right: 24px;
+
+}
+
+.Brigada_de_Incendios {
+    background-color: var(--cor-black);
+    color: var(--cor-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+    height: 100vh;
+    max-height: 560px;
+    min-height: 200px;
+    place-items: center;
+    overflow: hidden;
+    position: relative;
+}

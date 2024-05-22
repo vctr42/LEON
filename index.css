@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    font-size: 16px;
 }
 
 :root {
@@ -50,12 +51,13 @@ header nav a {
 }
 
 .botao_secundario {
-    padding: 16px;
     background-color: transparent;
     border: 2px solid var(--cor-secundaria);
     border-radius: 8px;
     color: var(--cor-white);
-    margin: 24px;
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
 }
 
 .botao_secundario:hover {
@@ -64,11 +66,12 @@ header nav a {
 }
 
 .botao_primario {
-    padding: 16px;
     background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
     border-radius: 8px;
     color: var(--cor-white);
-    margin: 24px;
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
 }
 
 .botao_primario:hover {
@@ -78,38 +81,45 @@ header nav a {
 
 h1 {
     font-weight: bold;
-    font-size: 96px;
+    font-size: 5vw;
 }
 
 .paragrafo {
     position: relative;
     top: 0;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5vw;
     margin-bottom: 96px;
 }
 
 #Hero {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     background-color: var(--cor-principal-03);
     color: var(--cor-white);
-    height: 836px;
-    justify-content: space-between;
+    height: 91vh;
+    column-gap: 196px;
+    justify-content: center;
+    
 }
 
 .Hero_foreground {
-    height: 494px;
-    width: 592px;
+    max-width: 595px;  
+    max-height: 495px;
     margin-left: 110px;
     z-index: +10;
 }
 
-.img_hero {
-    margin-right: 110px;
+.area_img_hero {
+    max-width: 595px;  
+    max-height: 495px; 
+    object-fit: cover; 
     z-index: +10;
+    margin-right: 96px;
 }
+
+
 
 .onda {
     position: absolute;
@@ -231,12 +241,14 @@ h1 {
     padding: 12px;
 }
 
-footer {
+footer {    
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background-color: var(--cor-black);
     padding: 64px 48px 12px;
     text-align: center;
+    height: 100%;
 }
 
 footer div {
