@@ -4,25 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="root.css">
+    <script src="elementos_padrao.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/foguin.svg" type="image/x-icon">
     <title>LEON</title>
 </head>
 
 <body>
-    <header>
-        <a href="#">
-            <img src="img/LOGO Azul.svg" alt="Logo LEON" width="162px" height="52px">
-        </a>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="servicos.html">Serviços</a>
-            <a class="botao_secundario" href="">Entre em Contato</a>
-        </nav>
-    </header>
+    <header id="header"></header>
 
     <main>
     
@@ -139,62 +131,6 @@
             </div>
         </section>
     </main>
-
-    <footer id="footer">
-        <img src="img/LOGO Clara.png" alt="Logo LEON">
-
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="sobre.html">SOBRE</a>
-            <a href="servicos.html">SERVIÇOS</a>
-            <a href="contato.html">CONTATO</a>
-            <a href="orcamento.html">ORÇAMENTO</a>
-            
-            <div class="footer">
-                
-                <button class="social">
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M19.959 11.719V19.098H15.681V12.213C15.681 10.483 15.062 9.303 13.514 9.303C12.332 9.303 11.628 10.099 11.319 10.868C11.206 11.143 11.177 11.526 11.177 11.911V19.098H6.897C6.897 19.098 6.955 7.438 6.897 6.229H11.177V8.053L11.149 8.095H11.177V8.053C11.745 7.178 12.76 5.927 15.033 5.927C17.848 5.927 19.959 7.767 19.959 11.719ZM2.421 0.026001C0.958 0.026001 0 0.986001 0 2.249C0 3.484 0.93 4.473 2.365 4.473H2.393C3.886 4.473 4.813 3.484 4.813 2.249C4.787 0.986001 3.887 0.026001 2.422 0.026001H2.421ZM0.254 19.098H4.532V6.229H0.254V19.098Z" fill="white"/>
-                        </svg>
-                    </a>
-                </button>
-
-                <button class="social">
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M16.017 2H7.947C6.37015 2.00185 4.85844 2.62914 3.74353 3.74424C2.62862 4.85933 2.00159 6.37115 2 7.948L2 16.018C2.00185 17.5948 2.62914 19.1066 3.74424 20.2215C4.85933 21.3364 6.37115 21.9634 7.948 21.965H16.018C17.5948 21.9631 19.1066 21.3359 20.2215 20.2208C21.3364 19.1057 21.9634 17.5938 21.965 16.017V7.947C21.9631 6.37015 21.3359 4.85844 20.2208 3.74353C19.1057 2.62862 17.5938 2.00159 16.017 2V2ZM19.957 16.017C19.957 16.5344 19.8551 17.0468 19.6571 17.5248C19.4591 18.0028 19.1689 18.4371 18.803 18.803C18.4371 19.1689 18.0028 19.4591 17.5248 19.6571C17.0468 19.8551 16.5344 19.957 16.017 19.957H7.947C6.90222 19.9567 5.90032 19.5415 5.16165 18.8026C4.42297 18.0638 4.008 17.0618 4.008 16.017V7.947C4.00827 6.90222 4.42349 5.90032 5.16235 5.16165C5.90122 4.42297 6.90322 4.008 7.948 4.008H16.018C17.0628 4.00827 18.0647 4.42349 18.8034 5.16235C19.542 5.90122 19.957 6.90322 19.957 7.948V16.018V16.017Z" fill="white"/>
-                            <path d="M11.9818 6.819C10.6133 6.82112 9.30136 7.36579 8.33372 8.33361C7.36609 9.30143 6.82168 10.6134 6.81982 11.982C6.82141 13.3509 7.36585 14.6633 8.33372 15.6314C9.3016 16.5995 10.6139 17.1441 11.9828 17.146C13.3519 17.1444 14.6645 16.5998 15.6326 15.6317C16.6007 14.6637 17.1452 13.3511 17.1468 11.982C17.1447 10.6131 16.5998 9.30088 15.6315 8.33319C14.6633 7.3655 13.3507 6.82132 11.9818 6.82V6.819ZM11.9818 15.138C11.1451 15.138 10.3426 14.8056 9.7509 14.2139C9.15922 13.6222 8.82682 12.8198 8.82682 11.983C8.82682 11.1462 9.15922 10.3438 9.7509 9.75208C10.3426 9.1604 11.1451 8.828 11.9818 8.828C12.8186 8.828 13.6211 9.1604 14.2127 9.75208C14.8044 10.3438 15.1368 11.1462 15.1368 11.983C15.1368 12.8198 14.8044 13.6222 14.2127 14.2139C13.6211 14.8056 12.8186 15.138 11.9818 15.138Z" fill="white"/>
-                            <path d="M17.1559 8.095C17.8391 8.095 18.3929 7.54118 18.3929 6.858C18.3929 6.17483 17.8391 5.621 17.1559 5.621C16.4728 5.621 15.9189 6.17483 15.9189 6.858C15.9189 7.54118 16.4728 8.095 17.1559 8.095Z" fill="white"/>
-                        </svg>
-                    </a>
-                </button>
-
-            </div class="footer">
-            <p> LEON... - CNPJ: &copy; <span id="year"></span> Todos os direitos reservados.</p>
-        </nav>
-        
-        <div id="dev">
-            <p>Desenvolvido por <a href="https://www.instagram.com/_victor_gois_/">@vctr42</a></p>
-            <br>
-
-            <button class="social">
-                <a href="https://github.com/vctr42" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-            </button>
-
-            <button class="social">
-                <a href="https://www.linkedin.com/in/victor-da-silva-gois/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M19.959 11.719V19.098H15.681V12.213C15.681 10.483 15.062 9.303 13.514 9.303C12.332 9.303 11.628 10.099 11.319 10.868C11.206 11.143 11.177 11.526 11.177 11.911V19.098H6.897C6.897 19.098 6.955 7.438 6.897 6.229H11.177V8.053L11.149 8.095H11.177V8.053C11.745 7.178 12.76 5.927 15.033 5.927C17.848 5.927 19.959 7.767 19.959 11.719ZM2.421 0.026001C0.958 0.026001 0 0.986001 0 2.249C0 3.484 0.93 4.473 2.365 4.473H2.393C3.886 4.473 4.813 3.484 4.813 2.249C4.787 0.986001 3.887 0.026001 2.422 0.026001H2.421ZM0.254 19.098H4.532V6.229H0.254V19.098Z" fill="white"/>
-                    </svg>
-                </a>
-            </button>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 </body>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 </html> 

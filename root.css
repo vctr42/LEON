@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    font-size: 16px;
 }
 
 :root {
@@ -33,7 +34,7 @@
     --cor-cinza-03:     #3D444F;
 }
 
-header {
+#header {
     background-color: var(--cor-black);
     display: flex;
     align-items: center;
@@ -44,18 +45,19 @@ header {
     padding-right: 24px;
 }
 
-header nav a {
+#header nav a {
     color: var(--cor-white);
-    padding: 24px;
+    padding: 0.8vw;
 }
 
 .botao_secundario {
-    padding: 16px;
     background-color: transparent;
     border: 2px solid var(--cor-secundaria);
     border-radius: 8px;
     color: var(--cor-white);
-    margin: 24px;
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
 }
 
 .botao_secundario:hover {
@@ -64,11 +66,12 @@ header nav a {
 }
 
 .botao_primario {
-    padding: 16px;
     background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
     border-radius: 8px;
     color: var(--cor-white);
-    margin: 24px;
+    margin: 1vw;
+    font-size: 1vw;
+    padding: 0.8vw;
 }
 
 .botao_primario:hover {
@@ -76,28 +79,17 @@ header nav a {
     color: var(--cor-black);
 }
 
-h1 {
-    font-weight: bold;
-    font-size: 96px;
-}
-
-.paragrafo {
+#footer {    
     position: relative;
-    top: 0;
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 96px;
-}
-
-footer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background-color: var(--cor-black);
     padding: 64px 48px 12px;
     text-align: center;
+    height: 100%;
 }
 
-footer div {
+#footer div {
     margin-top: 24px;
     display: flex;
     justify-content: center;
