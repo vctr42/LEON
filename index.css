@@ -190,13 +190,13 @@ h1 {
     color: var(--cor-black);
 }
 
-#serviços {
+#servicos {
     height: 950px;
     background-color: var(--cor-principal-01);
     background-image: url(img/img\ serviços.png);
 }
 
-.title_serviços {
+.title_servicos {
     display: flex;
     height: 226px;
     text-align: center;
@@ -206,7 +206,7 @@ h1 {
     font-size: 36px;
 }
 
-.area_serviços {
+.area_servicos {
     display: grid;
     grid-template-columns: 303px 303px 303px;
     grid-template-rows: 327px 327px;
@@ -216,7 +216,7 @@ h1 {
     color: var(--cor-white);
 }
 
-.cards_serviços {
+.cards_servicos {
     overflow: hidden;
     border-radius: 8px;
     background-color: var(--cor-black);
@@ -230,12 +230,12 @@ h1 {
 }
 
 
-.cards_serviços > img {
+.cards_servicos > img {
     position: absolute;
     z-index: -10;
 }
 
-.cards_serviços h3 + p {
+.cards_servicos h3 + p {
     margin-top: 12px;
     margin-bottom: 24px;
     padding: 12px;
