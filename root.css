@@ -91,7 +91,6 @@
 
 #footer div {
     margin-top: 24px;
-    display: flex;
     justify-content: center;
     margin: 24px;
 }
@@ -108,11 +107,12 @@
 }
 
 #dev {
-    display: block;
     text-align: center;
     text-decoration: none;
     color: var(--cor-white);
+    display: block;
 }
+
 
 .social{
     transition: all ease-in-out 0.3s;
