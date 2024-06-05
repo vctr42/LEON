@@ -1,0 +1,24 @@
+.hero {
+    background-color: var(--cor-black);
+    color: var(--cor-white);
+    height: 64vh;
+    max-height: 64vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.Hero_foreground{
+    max-width: 590px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    row-gap: 48px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 4vw;
+}
