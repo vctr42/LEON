@@ -1,0 +1,217 @@
+/* =========================================================================
+   PÁGINA EXCLUSIVA - INSTALAÇÕES HIDRÁULICAS
+   ========================================================================= */
+
+/* Core Styles */
+.hidraulica-body {
+    background-color: var(--cor-black); /* Tema escuro e imersivo */
+    color: var(--cor-white);
+}
+
+/* Hero Section Personalizado */
+.hidro-hero {
+    position: relative;
+    padding: 6rem 0 8rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--cor-principal-05) 0%, #030811 100%);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.hidro-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../img/Hero_sobre.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    opacity: 0.15;
+    z-index: 0;
+    filter: blur(2px) grayscale(50%);
+}
+
+.hidro-hero-inner {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tag-premium {
+    display: inline-block;
+    background-color: rgba(238, 117, 34, 0.15); /* cor-primaria alpha */
+    color: var(--cor-primaria);
+    border: 1px solid rgba(238, 117, 34, 0.3);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(4px);
+}
+
+.hidro-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #FFF, #A0C2F2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hidro-hero p {
+    font-size: 1.2rem;
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+}
+
+/* Container de Cards Estilosos */
+.hidro-services-section {
+    padding: 6rem 0;
+    position: relative;
+    margin-top: -4rem; /* Sobe um pouco os cards por cima do hero */
+    z-index: 20;
+}
+
+.hidro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .hidro-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Moderno / Glassmorphism */
+.hidro-card {
+    position: relative;
+    background: rgba(16, 47, 90, 0.3); /* --cor-principal-04 translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 480px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito Glow Invisível no Hover */
+.hidro-card::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, var(--cor-primaria) 0%, transparent 70%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.5s ease;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.hidro-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(238, 117, 34, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(238, 117, 34, 0.1);
+}
+
+.hidro-card:hover::before {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(2.5);
+}
+
+/* Imagem Flutuante de Fundo */
+.hidro-card-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 60%;
+    object-fit: cover;
+    opacity: 0.6;
+    mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    z-index: 2;
+}
+
+.hidro-card:hover .hidro-card-img {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Conteúdo do Card */
+.hidro-card-content {
+    position: relative;
+    z-index: 5;
+    background: transparent;
+}
+
+.hidro-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(238, 117, 34, 0.3);
+}
+
+.hidro-icon svg {
+    width: 28px; height: 28px; fill: #FFF;
+}
+
+.hidro-card-content h3 {
+    font-size: 1.6rem;
+    color: #FFF;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.hidro-card-content p {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hidro-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.hidro-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 2px;
+    background-color: var(--cor-secundaria);
+    transition: width 0.3s ease;
+}
+
+.hidro-card:hover .hidro-btn::after {
+    width: 100%;
+}
+
+.hidro-btn svg {
+    width: 18px; height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.hidro-card:hover .hidro-btn svg {
+    transform: translateX(6px);
+}

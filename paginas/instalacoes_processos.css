@@ -1,0 +1,203 @@
+/* =========================================================================
+   PÁGINA EXCLUSIVA - PROCESSOS E LICENCIAMENTOS
+   ========================================================================= */
+
+/* Core Styles */
+.processo-body {
+    background-color: var(--cor-black);
+    color: var(--cor-white);
+}
+
+/* Hero Section Personalizado */
+.processo-hero {
+    position: relative;
+    padding: 6rem 0 8rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--cor-principal-05) 0%, #030811 100%);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.processo-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Imagem de fundo focada em relatórios/processos */
+    background-image: url('../img/Hero_sobre.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    opacity: 0.12;
+    z-index: 0;
+    filter: blur(2px) sepia(20%) hue-rotate(180deg); /* Tom esverdeado/azulado para diferenciar dos outros serviços */
+}
+
+.processo-hero-inner {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.processo-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #FFF, #00A3FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.processo-hero p {
+    font-size: 1.2rem;
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+}
+
+/* Container de Cards Estilosos */
+.processo-services-section {
+    padding: 6rem 0;
+    position: relative;
+    margin-top: -4rem; 
+    z-index: 20;
+}
+
+.processo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .processo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Moderno / Glassmorphism */
+.processo-card {
+    position: relative;
+    background: rgba(16, 47, 90, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 480px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.processo-card::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200px; height: 200px;
+    /* Brilho hover em tom Ciano/Azul claro para áreas documentais */
+    background: radial-gradient(circle, #00A3FF 0%, transparent 70%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.5s ease;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.processo-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 163, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 163, 255, 0.15);
+}
+
+.processo-card:hover::before {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(2.5);
+}
+
+/* Imagem Flutuante de Fundo */
+.processo-card-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 60%;
+    object-fit: cover;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    z-index: 2;
+}
+
+.processo-card:hover .processo-card-img {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+/* Conteúdo do Card */
+.processo-card-content {
+    position: relative;
+    z-index: 5;
+    background: transparent;
+}
+
+.processo-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #00A3FF, #005A8C);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 163, 255, 0.3);
+}
+
+.processo-icon svg {
+    width: 28px; height: 28px; fill: #FFF;
+}
+
+.processo-card-content h3 {
+    font-size: 1.6rem;
+    color: #FFF;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.processo-card-content p {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.processo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00A3FF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.processo-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 2px;
+    background-color: #00A3FF;
+    transition: width 0.3s ease;
+}
+
+.processo-card:hover .processo-btn::after {
+    width: 100%;
+}
+
+.processo-btn svg {
+    width: 18px; height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.processo-card:hover .processo-btn svg {
+    transform: translateX(6px);
+}

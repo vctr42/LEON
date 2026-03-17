@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Solicite um orçamento para projetos técnicos, licenciamentos AVCB e instalação de equipamentos contra incêndios.">
+	<title>Orçamento | LEON Segurança Contra Incêndios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="root.css">
+	<link rel="stylesheet" href="paginas.css">
+    <link rel="shortcut icon" href="img/foguin.svg" type="image/x-icon">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+                <img src="img/LOGO Azul.svg" alt="LEON - logotipo" width="162" height="52">
+            </a>
+
+            <nav role="navigation" aria-label="Navegação principal">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a class="botao_secundario" href="contato.html">Entre em Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+	<main class="page-main">
+		<section class="page-hero">
+            <img class="page-hero-bg" src="img/Background_Sobre.png" alt="" loading="eager" fetchpriority="high">
+            <div class="container hero-inner text-center">
+			    <h1>Solicite um Orçamento</h1>
+			    <p>Preencha os dados do seu projeto e nossa equipe técnica fará uma análise inicial sem compromisso.</p>
+            </div>
+		</section>
+
+		<section class="contact-form-section">
+            <div class="container">
+			    <form class="contact-form" action="#" method="post" aria-label="Formulário de orçamento">
+				    <div class="form-row">
+					    <label for="nome">Nome ou Razão Social</label>
+					    <input id="nome" name="nome" type="text" required autocomplete="name" placeholder="Empresa XYZ ou Nome Completo">
+				    </div>
+
+				    <div class="form-row">
+					    <label for="email">E-mail Corporativo</label>
+					    <input id="email" name="email" type="email" required autocomplete="email" placeholder="email@empresa.com.br">
+				    </div>
+
+                    <div class="form-row">
+					    <label for="servico">Serviço Desejado</label>
+					    <select id="servico" name="servico" required>
+                            <option value="" disabled selected>Selecione um serviço</option>
+                            <option value="avcb">Processo AVCB / CLCB</option>
+                            <option value="projeto">Projeto Técnico do Bombeiro</option>
+                            <option value="instalacao">Instalações em Geral (Hidrantes, Sprinklers...)</option>
+                            <option value="treinamento">Treinamento de Brigada</option>
+                            <option value="outro">Outro</option>
+                        </select>
+				    </div>
+
+				    <div class="form-row">
+					    <label for="mensagem">Detalhes do Projeto</label>
+					    <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Forneça metros quadrados, tipo de ocupação, se é renovação, ou outros detalhes..."></textarea>
+				    </div>
+
+				    <div class="form-actions">
+					    <button type="submit" class="botao_primario">Enviar Solicitação</button>
+					    <button type="reset" class="botao_secundario">Limpar</button>
+				    </div>
+			    </form>
+            </div>
+		</section>
+	</main>
+
+            <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="img/LOGO Clara.svg" alt="LEON logo" width="162" height="52">
+            </div>
+
+            <nav class="footer-nav" aria-label="Rodapé - navegação">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="contato.html">Contato</a>
+                <a href="orcamento.html">Orçamento</a>
+            </nav>
+
+            <div class="footer-bottom-bar">
+                <div class="footer-copy">
+                    <p>LEON - CNPJ: &copy; <span id="year">2026</span> Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-dev">
+                    <span>Desenvolvido por: <a href="https://github.com/vctr42" target="_blank">@vctr42</a></span>
+                    <div class="dev-socials">
+                        <a class="social" href="https://github.com/vctr42" target="_blank" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a class="social" href="https://www.linkedin.com/in/victor-da-silva-gois/" target="_blank" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+</body>
+</html>

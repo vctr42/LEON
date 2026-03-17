@@ -1,0 +1,586 @@
+/* =========================================================================
+   PÁGINA DE SERVIÇOS - CSS MODULE
+   ========================================================================= */
+
+@keyframes floatAnim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hero Section Servicos */
+.page-hero {
+    position: relative;
+    background-color: var(--cor-principal-05); /* Navy Profundo */
+    background-image: linear-gradient(rgba(4, 11, 22, 0.8), rgba(4, 11, 22, 0.95)), url('img/Background_Sobre.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 7rem 0 8rem;
+    color: var(--cor-white);
+    overflow: hidden;
+}
+
+/* Efeitos de Luz no Fundo */
+.hero-glow {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(237, 150, 33, 0.15) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(40px);
+}
+.hero-glow.shape-1 {
+    top: -10%; left: -10%;
+}
+.hero-glow.shape-2 {
+    bottom: -10%; right: -5%;
+    width: 30vw; height: 30vw;
+    background: radial-gradient(circle, rgba(16, 47, 90, 0.4) 0%, transparent 60%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(237, 150, 33, 0.1);
+    border: 1px solid rgba(237, 150, 33, 0.2);
+    color: var(--cor-secundaria);
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.hero-badge svg {
+    color: var(--cor-secundaria);
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    margin-bottom: 1.5rem;
+    color: var(--cor-white);
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.hero-text h1 span {
+    background: linear-gradient(135deg, #FFF 0%, var(--cor-secundaria) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-text .subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    color: var(--cor-cinza-01);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.hero-actions .botao_secundario.outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--cor-white);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-actions .botao_secundario.outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--cor-secundaria);
+}
+
+.hero-actions .botao_secundario.outline svg {
+    transition: transform 0.3s ease;
+}
+.hero-actions .botao_secundario.outline:hover svg {
+    transform: translateY(3px);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 2px solid rgba(237, 150, 33, 0.3);
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+
+.hero-image-wrapper img {
+    position: relative;
+    z-index: 1;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(237, 150, 33, 0.1);
+    border: 1px solid rgba(255,255,255,0.05);
+    animation: floatAnim 6s ease-in-out infinite; 
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+    max-width: 550px;
+    object-fit: cover;
+}
+
+.hero-image-wrapper:hover .image-decoration {
+    top: 10px;
+    left: 10px;
+    border-color: rgba(237, 150, 33, 0.6);
+}
+
+.hero-image-wrapper img:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 60px rgba(237, 150, 33, 0.25);
+    border-color: rgba(237, 150, 33, 0.3);
+    animation-play-state: paused; 
+}
+
+/* Floating card na imagem */
+.floating-card {
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    background: rgba(16, 47, 90, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    animation: floatAnim 5s ease-in-out infinite reverse;
+}
+
+.floating-card .icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--cor-secundaria), #BA5C1A);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.floating-card .icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.floating-card .info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.floating-card .info strong {
+    font-size: 1.5rem;
+    color: var(--cor-white);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.floating-card .info span {
+    font-size: 0.85rem;
+    color: var(--cor-cinza-01);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .floating-card {
+        padding: 1rem;
+        bottom: -15px;
+        left: 0px;
+    }
+    .floating-card .icon {
+        width: 36px;
+        height: 36px;
+    }
+    .floating-card .icon svg {
+        width: 18px;
+        height: 18px;
+    }
+    .floating-card .info strong {
+        font-size: 1.25rem;
+    }
+    .floating-card .info span {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-hero {
+        padding: 8rem 0;
+    }
+    .hero-inner {
+        grid-template-columns: 1.1fr 0.9fr;
+        text-align: left;
+        gap: 3rem;
+    }
+    .hero-text .subtitle {
+        margin-inline: 0;
+    }
+    .hero-actions {
+        justify-content: flex-start;
+    }
+    .hero-glow.shape-1 {
+        top: -20%; left: -10%;
+    }
+    .floating-card {
+        bottom: -30px;
+        left: -40px;
+    }
+}
+
+/* Instalações Section - Igual à Secao Serviços da Home */
+.instalacoes-section {
+    background-color: var(--cor-principal-05); /* Fundo base navy escuro */
+    background-image: url('img/instalações.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Multiplicação suave, tira o aspecto sujo do hard-light */
+    padding: 6rem 0;
+    color: var(--cor-white);
+}
+
+.section-title {
+    color: var(--cor-white);
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    -webkit-text-fill-color: initial;
+    width: auto;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-secundaria);
+    border-radius: 2px;
+}
+
+.instalacoes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.instalacao-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(16, 47, 90, 0.2); /* Azul clássico 04 bem transparente */
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    box-shadow: 0 20px 40px rgba(4, 11, 22, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeUp 0.8s ease-out 0.4s both;
+    z-index: 1;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.instalacao-card::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, var(--cor-secundaria) 0%, transparent 70%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.5s ease;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.instalacao-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(237, 150, 33, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(237, 150, 33, 0.15);
+}
+
+.instalacao-card:hover::before {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(2.5);
+}
+
+.instalacao-card img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    opacity: 0.5;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.instalacao-card:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    color: var(--cor-white);
+    background: transparent;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.card-content p {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível e empurra o botão */
+}
+
+.servico-btn {
+    margin-top: auto; /* Garante que o botão fique sempre na base do card */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.servico-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 2px;
+    background-color: var(--cor-hover-02);
+    transition: width 0.3s ease;
+}
+
+.instalacao-card:hover .servico-btn::after {
+    width: 100%;
+}
+
+.servico-btn svg {
+    width: 18px; height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.instalacao-card:hover .servico-btn svg {
+    transform: translateX(6px);
+}
+
+@media (min-width: 640px) {
+    .instalacoes-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+
+@media (min-width: 1024px) {
+    .instalacoes-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
+/* Removido o repeat(4, 1fr) para manter simetria de 3 colunas com 6 itens */
+
+/* Outros Serviços Section */
+.outros-servicos-section {
+    background-color: var(--cor-black);
+    padding: 5rem 0;
+}
+
+.out-servicos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.outro-servico-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(16, 47, 90, 0.4); /* Fundo vidro navy transparente */
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(4, 11, 22, 0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+/* Efeito radial brilho fundo Outros Serviços */
+.outro-servico-card::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(237, 150, 33, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.outro-servico-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(237, 150, 33, 0.4);
+    box-shadow: 0 25px 45px rgba(4, 11, 22, 0.9), 0 0 40px rgba(237, 150, 33, 0.15);
+}
+
+.outro-servico-card:hover::after {
+    opacity: 1;
+}
+
+.outro-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Deixa vazar texto imagem realçando o vidro escuro */
+    z-index: -2;
+    transition: transform 0.6s ease;
+}
+
+.outro-servico-card:hover .outro-bg {
+    transform: scale(1.05); /* Zoom sutil unificado */
+}
+
+/* Overlay dark para garantir leitura de texto na imagem base */
+.outro-servico-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(4,11,22,0.95) 0%, rgba(4,11,22,0.5) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.outro-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+    align-items: center;
+}
+
+.texto {
+    color: var(--cor-white);
+}
+
+.texto h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--cor-primaria);
+}
+
+.texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.imagens img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) {
+    .outro-inner {
+        grid-template-columns: 1fr 1fr;
+        padding: 4rem;
+        gap: 4rem;
+    }
+    .outro-servico-card.reverse .outro-inner .texto {
+        order: 2;
+    }
+    .outro-servico-card.reverse .outro-inner .imagens {
+        order: 1;
+    }
+}

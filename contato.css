@@ -1,0 +1,61 @@
+/* =========================================================================
+   PÁGINA DE CONTATO - V3 Minimalista Premium
+   ========================================================================= */
+
+.page-hero {
+    position: relative;
+    background-color: var(--cor-principal-05);
+    background-image: radial-gradient(circle at top right, rgba(237, 150, 33, 0.05), transparent),
+                      linear-gradient(rgba(4, 11, 22, 0.9), rgba(4, 11, 22, 0.98));
+    padding: 10rem 0 6rem;
+    color: var(--cor-white);
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-inner h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.hero-inner h1 span {
+    color: var(--cor-secundaria);
+    display: block;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 1rem;
+}
+
+.hero-inner p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: var(--cor-cinza-01);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Subtil linha de destaque */
+.hero-inner::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--cor-secundaria);
+    margin: 3rem auto 0;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 8rem 0 4rem;
+    }
+}

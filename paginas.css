@@ -1,0 +1,279 @@
+/* =========================================================================
+   PÁGINAS INTERNAS - CSS MODULE
+   ========================================================================= */
+
+/* Hero padrão interno */
+.page-hero {
+    position: relative;
+    background-color: var(--cor-principal-05); /* Navy Escuro */
+    color: var(--cor-white);
+    padding: 5rem 0 6rem;
+    text-align: center;
+    overflow: hidden;
+    background-blend-mode: soft-light;
+}
+
+.page-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 1;
+    filter: saturate(1.2);
+}
+
+.page-hero .hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.125rem;
+    color: #e2e8f0;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+/* Base de Conteúdo Principal */
+.page-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-inner h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    color: var(--cor-principal-04);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.content-inner h3 {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: var(--cor-principal-03);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.content-inner p {
+    font-size: 1.1rem;
+    color: var(--cor-cinza-03);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+}
+
+.content-inner ul, .content-inner ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--cor-cinza-03);
+    background-color: #F8FAFC;
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.content-inner li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    list-style-type: disc;
+}
+
+.content-inner li strong {
+    color: var(--cor-black);
+}
+
+/* Aside / Sidebar em Subpáginas */
+.page-with-sidebar {
+    padding: 4rem 0;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .page-grid {
+        grid-template-columns: 1fr 340px;
+        gap: 4rem;
+    }
+}
+
+.sidebar-widget {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-widget h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-principal-05);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.sidebar-widget p {
+    color: var(--cor-cinza-03);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.sidebar-widget .botao_primario {
+    width: 100%;
+}
+
+.sidebar-widget ul li a {
+    transition: all 0.2s ease;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.sidebar-widget ul li a:hover {
+    color: var(--cor-secundaria);
+    transform: translateX(5px);
+}
+
+.sidebar-widget ul li a.active {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    pointer-events: none;
+}
+
+/* Formulário de Contato e Orçamento */
+.contact-form-section {
+    padding: 6rem 0;
+    background-color: var(--cor-principal-05); /* Base Dark Navy */
+    background-image: url('img/img serviços.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.contact-form {
+    background: rgba(16, 47, 90, 0.4); /* Glassmorphism Premium Navy */
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(4, 11, 22, 0.8), 0 0 40px rgba(237, 150, 33, 0.05); /* Brilho laranja de fundo */
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Brilho interno no formulário */
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at center top, rgba(237, 150, 33, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.form-row {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.form-row label {
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    color: var(--cor-cinza-01); /* Cinza claro premium */
+    font-size: 0.95rem;
+}
+
+.form-row input, .form-row textarea, .form-row select {
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background-color: rgba(4, 11, 22, 0.4); /* Vidro super escuro para o input */
+    color: var(--cor-white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do placeholder */
+.form-row input::placeholder, .form-row textarea::placeholder {
+    color: var(--cor-cinza-02);
+    opacity: 0.7;
+}
+
+/* Estilo geral no escuro para selects */
+.form-row select {
+    color: var(--cor-white);
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23AFB6C1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem top 50%;
+    background-size: 0.65rem auto;
+}
+
+.form-row select option {
+    background-color: var(--cor-principal-05); /* Fundo real opções abertas no escuro */
+    color: var(--cor-white);
+}
+
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 4px rgba(237, 150, 33, 0.15); /* Foco neon alaranjado */
+    background-color: rgba(4, 11, 22, 0.6);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 2rem 1.5rem;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* Imagens Internas */
+.content-inner img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}

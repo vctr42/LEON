@@ -1,0 +1,343 @@
+/* =========================================================================
+   RESET BASICO E ROOT
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Escala de Cor Principal Azul */
+    --cor-white:        #E9F0FB;
+    --cor-principal-01: #82A1CD;
+    --cor-principal-02: #4F79B6;
+    --cor-principal:    #1c519f;
+    --cor-principal-03: #16417C;
+    --cor-principal-04: #102F5A;
+    --cor-principal-05: #0A1D38;
+    --cor-black:        #040B16;
+
+    /* Escala de cor primaria (Botões/Destaques) */
+    --cor-hover-01:     #F29453;
+    --cor-primaria:     #EE7522;
+    --cor-click-01:     #BA5C1A;
+
+    /* Escala de cor secundaria */
+    --cor-hover-02:     #F1AE53;
+    --cor-secundaria:   #ED9621;
+    --cor-click-02:     #B7741A;
+
+    /* Escala de Cinza */
+    --cor-cinza-01:     #AFB6C1;
+    --cor-cinza-02:     #767D88;
+    --cor-cinza-03:     #3D444F;
+    
+    /* Breakpoints e Layout */
+    --container-max:    1280px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--cor-black);
+    background-color: var(--cor-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* =========================================================================
+   ELEMENTOS NATIVOS NORMALS
+   ========================================================================= */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* =========================================================================
+   TIPOGRAFIA E ACESSIBILIDADE
+   ========================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* =========================================================================
+   COMPONENTES GLOBAIS (BOTÕES)
+   ========================================================================= */
+.botao_primario, .botao_secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.botao_primario {
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-white);
+}
+
+.botao_primario:hover, .botao_primario:focus-visible {
+    background: var(--cor-hover-01);
+    color: var(--cor-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(238, 117, 34, 0.3);
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-white);
+}
+
+.botao_secundario:hover, .botao_secundario:focus-visible {
+    background-color: var(--cor-hover-02);
+    color: var(--cor-black);
+    transform: translateY(-2px);
+}
+
+/* =========================================================================
+   CABEÇALHO (HEADER) - COMPONENTE GLOBAL
+   ========================================================================= */
+.site-header {
+    background-color: var(--cor-black);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-inner .brand img {
+    height: clamp(40px, 5vw, 52px);
+    width: auto;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-list a {
+    color: var(--cor-white);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-list a:hover {
+    color: var(--cor-primaria);
+}
+
+.nav-list .botao_secundario {
+    padding: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav-list {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* =========================================================================
+   RODAPÉ (FOOTER) - COMPONENTE GLOBAL
+   ========================================================================= */
+.site-footer {    
+    background-color: var(--cor-black);
+    padding: 4rem 0 2rem;
+    color: var(--cor-white);
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.footer-brand img {
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.footer-nav a:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-social .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--cor-principal-04);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-social .social:hover {
+    background-color: var(--cor-primaria);
+    transform: translateY(-4px);
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--cor-cinza-01);
+}
+
+.footer-dev {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-dev span {
+    font-size: 0.875rem;
+    color: var(--cor-cinza-01);
+}
+
+.footer-dev a {
+    color: var(--cor-white);
+    font-weight: 600;
+}
+
+.footer-dev a:hover {
+    color: var(--cor-primaria);
+}
+
+.dev-socials {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.dev-socials .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--cor-principal-04);
+    transition: all 0.3s ease;
+    color: var(--cor-white);
+}
+
+.dev-socials .social:hover {
+    background-color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+.dev-socials svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-bottom-bar {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--cor-principal-04);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .footer-inner {
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand img { margin: 0; }
+    .footer-nav { justify-content: flex-end; }
+    
+    .footer-bottom-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
