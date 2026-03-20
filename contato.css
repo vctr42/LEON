@@ -7,10 +7,14 @@
     background-color: var(--cor-principal-05);
     background-image: radial-gradient(circle at top right, rgba(237, 150, 33, 0.05), transparent),
                       linear-gradient(rgba(4, 11, 22, 0.9), rgba(4, 11, 22, 0.98));
-    padding: 10rem 0 6rem;
+    padding: clamp(3rem, 6vw, 6rem) 0 clamp(1.5rem, 4vw, 3rem);
     color: var(--cor-white);
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--cor-principal-05);
+}
+main {
+    background-color: var(--cor-principal-05);
 }
 
 .hero-inner {
@@ -56,6 +60,6 @@
 
 @media (max-width: 768px) {
     .page-hero {
-        padding: 8rem 0 4rem;
+        padding: clamp(2rem, 6vw, 4rem) 0 clamp(1rem, 3vw, 2rem);
     }
 }

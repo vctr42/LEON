@@ -51,6 +51,7 @@ body {
 
 main {
     flex-grow: 1;
+    /* background-color: var(--cor-principal-05); */
 }
 
 /* =========================================================================
@@ -189,6 +190,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-list a:hover {
     color: var(--cor-primaria);
+}
+
+.nav-list a:hover.botao_secundario{
+    color: var(--cor-black);
 }
 
 .nav-list .botao_secundario {
