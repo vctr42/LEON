@@ -1,3 +1,8 @@
+---
+name: front-end-senior
+description: "Skill para criar, revisar e iterar instruções de agente focadas em tarefas front-end."
+---
+
 # Skill: front-end-senior — Agent Customization
 
 

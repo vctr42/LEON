@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="paginas.css">
-	<link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="paginas.css">
     <link rel="stylesheet" href="contato.css">
     <link rel="shortcut icon" href="img/foguin.svg" type="image/x-icon">
 </head>
@@ -42,7 +42,11 @@
 
 		<section class="contact-form-section">
             <div class="container">
-			    <form class="contact-form" action="#" method="post" aria-label="Formulário de orçamento">
+                <!-- Envio via UseBasin -->
+                <form class="contact-form" action="https://usebasin.com/f/88a28aa88360" method="POST" aria-label="Formulário de orçamento">
+                    <input type="hidden" name="_subject" value="Orçamento - LEON">
+                    <!-- Redirecionar para página de obrigado local após envio -->
+                    <input type="hidden" name="_next" value="obrigado.html">
 				    <div class="form-row">
 					    <label for="nome">Nome ou Razão Social</label>
 					    <input id="nome" name="nome" type="text" required autocomplete="name" placeholder="Empresa XYZ ou Nome Completo">
@@ -111,6 +115,7 @@
             </div>
         </div>
         <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/form-fallback.js"></script>
     </footer>
 </body>
 </html>
