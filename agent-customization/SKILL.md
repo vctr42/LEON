@@ -1,4 +1,5 @@
-# Skill: Agent Customization — Front-End Senior
+# Skill: front-end-senior — Agent Customization
+
 
 Resumo
 – Esta skill descreve um fluxo reutilizável para criar, revisar e iterar instruções de agente (ex.: `.instructions.md`, `SKILL.md`, `copilot-instructions.md`) focadas em tarefas de front-end (web/mobile).
